@@ -78,7 +78,7 @@ memset( _data.usr, 0 ,sizeof _data.usr);
 fprintf(stdout,"[+] Enter your name : ");
 fgets(_data.usr,sizeof (_data.usr)-1,stdin);
 
-fprintf(stdout,"[+] Enter serial : ");
+fprintf(stdout,"[+] Enter serial keyz : ");
 fgets(_data.ki,sizeof (_data.ki)-1,stdin);
 /* Fin saisies utilisateur */
 
