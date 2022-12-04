@@ -12,13 +12,13 @@
 
 /*
  * [+] Breakable need to be patched first to
- *      could be debbugged
- * 
+ *      could be debugged
+ *
  * root@kmkz-3lrvs/home/kmkz/Breakable# ./breakable
 [+] Enter your name : pouetapwal
 [+] Enter serial : kikoo
 - Username: pouetapwal- Key: kikoo
- 
+
 flag 6D651617373776F736565656D616D6F7375717569757165-2852
 * */
 
@@ -32,7 +32,7 @@ flag 6D651617373776F736565656D616D6F7375717569757165-2852
 
 int main(int argc, char **argv[]){
 
-/* Routine anti débugg  obfusquée 1 */
+/* Routine anti debug  obfusquée 1 */
 char usr[LIMIT]={0};
 short int dbg=(0);
 char z[LIMIT]=("0x0804924");
@@ -43,7 +43,7 @@ char serializ[57]={0x8c ,0x75 ,0x70 ,0x61 ,0x73 ,0x74 ,0x77 ,0x6e ,0x72,
                    0x6f ,0x52};
 
 int byte_ =(0);
-  
+
   __asm__(
 		"xor %eax,%eax \012"
 		"xor %ebx,%ebx \012"
@@ -69,12 +69,12 @@ if(good == -1 ){
 	printf("Program exited normally. \012");
 	return(1);
 }
-	
+
 
        /* Saisies utilisateur */
 memset( _data.ki, 0 ,sizeof _data.ki);
 memset( _data.usr, 0 ,sizeof _data.usr);
-       
+
 fprintf(stdout,"[+] Enter your name : ");
 fgets(_data.usr,sizeof (_data.usr)-1,stdin);
 
@@ -82,8 +82,8 @@ fprintf(stdout,"[+] Enter serial keyz : ");
 fgets(_data.ki,sizeof (_data.ki)-1,stdin);
 /* Fin saisies utilisateur */
 
-    
-    
+
+
 _data.usr[10]=( (_data.usr[8]) << 1 && _data.ki[3] ==(LOL) );
 
 
@@ -96,14 +96,14 @@ if(fget_ == -1 ){
 }
 
 sprintf(key,"%s", _data.usr);
- 
- 
- 
+
+
+
 char keyz[27]={0x6c ,0x65 ,0x70 ,0x61 ,0x73 ,0x73 ,0x77 ,0x6f ,0x72 ,
                 0x64 ,0x64 ,0x65 ,0x6c ,0x61 ,0x6d ,0x6f ,0x72 ,0x74 ,
                 0x71 ,0x75 ,0x69 ,0x74 ,0x75 ,0x65 ,0x00 ,0x00 ,0x90};
-                
-                /* assertion anti debug */ 
+
+                /* assertion anti debug */
 assert(fget_ == -1 || !fget_ || byte_ <= 0);
 _data.usr[2]=( (_data.usr[3]) ^2);
 
@@ -114,15 +114,15 @@ fprintf(stdout,"- Username: %s- Key: %s \012",_data.usr,_data.ki);
 
    /* --------------------------------------
     * Routine de generation du Serial Final
-    * 
-    * TODO : Prendre en compte le username 
+    *
+    * TODO : Prendre en compte le username
     * pour le serial final ! DONE ?
-    * 
-    * STRIPPING  
+    *
+    * STRIPPING
     * ------------------------------------ */
 
- 
- 
+
+
 short cpt=(0);
 assert(fget_ == -1|| !fget_ || byte_ <= 0);
 printf("flag ",_data.usr);
@@ -140,11 +140,11 @@ fprintf(stdout,"-%d ",wol-8);
 printf("\012");
 
 /* ----------------------------
- * Fin de la routine du Serial 
- * ---------------------------*/			
+ * Fin de la routine du Serial
+ * ---------------------------*/
 /* fake password verification */
 int serial=strcmp(_data.ki,genkey);
-                 if(serial ==0){ 
+                 if(serial ==0){
                    	printf("%s",serializ);
                     printf("Program exited normally . \012");
                     return(1);
@@ -152,7 +152,7 @@ int serial=strcmp(_data.ki,genkey);
                  if(serial != 0){
 	                   goto WINNER;
                  }
-                                                                                 
+
 WINNER:
 return(0);
 }
